@@ -48,7 +48,7 @@ The CSV file provided from Alphabet Soup's business team contains more than 34,0
       Similar structure to the initial model, however due to the decrease in input dimensions, the input neurons were reduced to 60, and the hidden layer neurons were reduced to 10. This model did not achieve the target level of performance, it achieved 73.8% accuracy (a slight improvement from the initial model). 
     
   * Model 2 - Automated Hyperparameter Model Optimization: <br>
-  ![Model Optimization 2 Best Hyperparameters](/images/besthyperparameteres.png "Model Optimization 2 Best Hyperparameters") 
+  ![Model Optimization 2 Best Hyperparameters](/images/besthyperparameters.png "Model Optimization 2 Best Hyperparameters") 
       The additionally preprocessed data was then used with keras tuner to determine the best hyperparameters to be used. The identified best hyperparameters were to use the activation 'relu' and 4 layers. It identified 16 neurons for the input layer, then 11, 1, 6, 6 and 1 for the hidden layers. The accuracy achieved was 73.9%.
 
   * Model 3 - Automated Hyperparameters + increased epochs: <br>
