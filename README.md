@@ -24,14 +24,14 @@ The CSV file provided from Alphabet Soup's business team contains more than 34,0
 ## Results
 
 * Data Preprocessing <br>
-![Unprocessed Dataframe](/images/unprocesseddataframe.png "Unprocessed Dataframe") 
+![Unprocessed Dataframe](/images/unprocesseddataframe.png "Unprocessed Dataframe") <br>
 
   * Target variable is 'IS_SUCCESSFUL'. 
   * Feature variables are 'APPLICATION_TYPE', 'AFFILIATION', 'CLASSIFICATION', 'USE_CASE', 'ORGANIZATION', 'STATUS', 'INCOME_AMOUNT', 'SPECIAL_CONSIDERATIONS' and 'ASK_AMT'.
   * The variables 'EIN' and 'NAME' were removed from the data because the were not targets or features. 
 
 * Compiling, Training and Evaluating the Model<br>
-![Initial Model Summary](/images/InitialModelSummary.png "Initial Model Summary") 
+![Initial Model Summary](/images/InitialModelSummary.png "Initial Model Summary") <br>
   * The initial model had 3 layers (input, hidden and output).  The input layer had 80 neurons, the hidden layer had 30 neurons, and the output layer had 1.  The input and hidden layer both used ReLu activation and the output used an activation of Sigmoid.  The initial 80 neurons was based off the approximately 2 times the input dimension (43), and the hidden layer's neurons were based off less than half of the initial neurons. The model ran for 100 epochs. 
   * The initial model did not achieve target level performance (75%), it achieved 72.9% accuracy. 
 
@@ -44,15 +44,15 @@ The CSV file provided from Alphabet Soup's business team contains more than 34,0
       * Combined the 'Heathcare' and 'Other' into one bin called 'Other' in the 'USE_CASE' column. 
 
       * Model 1 Compilation:<br>
-      ![Model Optimization 1 Summary](/images/ModelOptimization1Summary.png "Model Optimization 1 Summary") 
+      ![Model Optimization 1 Summary](/images/ModelOptimization1Summary.png "Model Optimization 1 Summary") <br>
       Similar structure to the initial model, however due to the decrease in input dimensions, the input neurons were reduced to 60, and the hidden layer neurons were reduced to 10. This model did not achieve the target level of performance, it achieved 73.8% accuracy (a slight improvement from the initial model). 
     
   * Model 2 - Automated Hyperparameter Model Optimization: <br>
-  ![Model Optimization 2 Best Hyperparameters](/images/besthyperparameters.png "Model Optimization 2 Best Hyperparameters") 
+  ![Model Optimization 2 Best Hyperparameters](/images/besthyperparameters.png "Model Optimization 2 Best Hyperparameters") <br>
       The additionally preprocessed data was then used with keras tuner to determine the best hyperparameters to be used. The identified best hyperparameters were to use the activation 'relu' and 4 layers. It identified 16 neurons for the input layer, then 11, 1, 6, 6 and 1 for the hidden layers. The accuracy achieved was 73.9%.
 
   * Model 3 - Automated Hyperparameters + increased epochs: <br>
-  ![Model Optimization 3 Summary](/images/ModelOptimization3Summary.png "Model Optimization 3 Summary") 
+  ![Model Optimization 3 Summary](/images/ModelOptimization3Summary.png "Model Optimization 3 Summary") <br>
       Created using the hyperparameters found through the automated optimization process, however rather than running for the 20 epochs, the number of epochs were increased to 100. The accuracy achieved was 73.6%.
 
 
